@@ -1,0 +1,14 @@
+# $> docker run -v /data/your-confluence-home:/var/atlassian/application-data/confluence --name="confluence" -d -p 8090:8090 -p 8091:8091 atlassian/confluence-server
+
+version: '2.1'
+services:
+  confluence:
+    image: atlassian/confluence-server
+    ports:
+      - 8090:8090
+      - 8091:8091
+    volumes:
+      - confluence-data:/var/atlassian/application-data/confluence
+
+volumes:
+  confluence-data: {}
